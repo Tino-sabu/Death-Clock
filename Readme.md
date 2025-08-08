@@ -36,7 +36,7 @@ For Software:
 # Installation
 
 ```
- git clone https://github.com/Tino-sabu/Death-Clock.git
+git clone https://github.com/Tino-sabu/Death-Clock.git
 cd Death-Clock 
 ```
 # Run
