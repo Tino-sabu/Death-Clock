@@ -35,15 +35,17 @@ By asking silly and serious questions about your habits, this app gives you a li
 For Software:
 # Installation
 
-git clone https://github.com/Tino-sabu/Death-Clock.git
-cd Death-Clock
-
+```
+ git clone https://github.com/Tino-sabu/Death-Clock.git
+cd Death-Clock 
+```
 # Run
 ##### Using Python 3.x
+```
 python -m http.server 8000
 
 Then open http://localhost:8000 in your browser
-
+```
 
 ### Project Documentation
 For Software:
