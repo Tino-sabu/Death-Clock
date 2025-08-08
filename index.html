@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Death Clock - Life Counter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-circles">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-hourglass-half"></i>
+                <span>Death Clock</span>
+            </div>
+            <nav class="nav">
+                <a href="#home" class="nav-link active" onclick="goToHome()">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Welcome Screen -->
+        <section id="welcome-screen" class="screen active">
+            <div class="container">
+                <div class="welcome-content">
+                    <div class="hero-text">
+                        <h1 class="title">
+                            Discover Your
+                            <span class="gradient-text">Life Counter</span>
+                        </h1>
+                        <p class="subtitle">
+                            Experience a precise countdown of your remaining time with our advanced life calculator.
+                            Get personalized insights based on your unique profile.
+                        </p>
+                        <button class="btn btn-primary" onclick="showPersonalInfo()">
+                            <span>Start Your Journey</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="clock-container">
+                            <div class="clock-face">
+                                <div class="clock-hand hour"></div>
+                                <div class="clock-hand minute"></div>
+                                <div class="clock-hand second"></div>
+                                <div class="clock-center"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Information Form -->
+        <section id="personal-info-screen" class="screen">
+            <div class="container">
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2 class="form-title">Personal Information</h2>
+                        <p class="form-subtitle">Help us personalize your experience</p>
+                    </div>
+                    <form class="personal-form" id="personal-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age" class="form-label">Current Age</label>
+                            <input type="number" id="age" name="age" class="form-input" placeholder="Enter your current age" min="1" max="120" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Gender</label>
+                            <div class="gender-options">
+                                <div class="gender-option">
+                                    <input type="radio" id="male" name="gender" value="male" class="gender-input">
+                                    <label for="male" class="gender-label">
+                                        <i class="fas fa-mars"></i>
+                                        <span>Male</span>
+                                    </label>
+                                </div>
+                                <div class="gender-option">
+                                    <input type="radio" id="female" name="gender" value="female" class="gender-input">
+                                    <label for="female" class="gender-label">
+                                        <i class="fas fa-venus"></i>
+                                        <span>Female</span>
+                                    </label>
+                                </div>
+                                <div class="gender-option">
+                                    <input type="radio" id="neutral" name="gender" value="neutral" class="gender-input">
+                                    <label for="neutral" class="gender-label">
+                                        <i class="fas fa-genderless"></i>
+                                        <span>Neutral</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary" onclick="showWelcome()">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <span>Continue</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Questions Screen -->
+        <section id="questions-screen" class="screen">
+            <div class="container">
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="question-counter">
+                            <span id="current-question">1</span> / <span id="total-questions">11</span>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-actions">
+                        <button type="button" class="btn btn-secondary" id="prev-btn" onclick="previousQuestion()" disabled>
+                            <i class="fas fa-arrow-left"></i>
+                            <span>Previous</span>
+                        </button>
+                        <button type="button" class="btn btn-primary" id="next-btn" onclick="nextQuestion()" disabled>
+                            <span>Next</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="question-container" id="question-container">
+                        <!-- Questions will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Screen -->
+        <section id="results-screen" class="screen">
+            <div class="container">
+                <div class="results-container">
+                    <div class="results-header">
+                        <h2 class="results-title">
+                            <span id="user-name-display">Your</span> Life Counter
+                        </h2>
+                        <p class="results-subtitle">
+                            <span id="user-name-subtitle">You</span> have <span id="time-remaining-text">...</span> left in this world
+                        </p>
+                        <div class="life-wasted-info">
+                            <p class="life-wasted-text">
+                                You have successfully wasted <span id="life-wasted-percentage">0</span>% of your life
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="counter-display">
+                        <div class="counter-main">
+                            <div class="counter-value" id="life-counter">
+                                <span class="years">0</span>.<span class="decimals">0000000000</span>
+                            </div>
+                            <div class="counter-label">Years Remaining</div>
+                        </div>
+                        
+                        <div class="counter-details">
+                            <div class="detail-item">
+                                <div class="detail-value" id="days-remaining">0</div>
+                                <div class="detail-label">Days</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value" id="hours-remaining">0</div>
+                                <div class="detail-label">Hours</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value" id="minutes-remaining">0</div>
+                                <div class="detail-label">Minutes</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-value" id="seconds-remaining">0</div>
+                                <div class="detail-label">Seconds</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-actions">
+                        <button type="button" class="btn btn-secondary" onclick="resetApp()">
+                            <i class="fas fa-refresh"></i>
+                            <span>Start Over</span>
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="shareResults()">
+                            <i class="fas fa-share"></i>
+                            <span>Share Results</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Death Clock. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading-overlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Calculating your life counter...</p>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
