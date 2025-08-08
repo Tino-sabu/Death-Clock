@@ -12,34 +12,38 @@
 - Member 2: Pranav Jayan - SSET
 
 ### Project Description
-[2-3 lines about what your project does]
+A quirky web app that calculates how many years, days, and seconds you have left to live — based on your age and lifestyle answers. It turns life expectancy into a personalized countdown clock for some deep (or dark) reflection.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+People never know exactly how much time they have left — but who really wants to think about that? Let’s add a little dramatic countdown just for fun!
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+By asking silly and serious questions about your habits, this app gives you a life clock ticking down your remaining time — because everyone needs a little existential motivation disguised as a game!
 
 ## Technical Details
 ### Technologies/Components Used
-For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- Languages: HTML, CSS, JavaScript
+
+- Frameworks: None (vanilla JS)
+
+- Libraries: FontAwesome for icons, Google Fonts for typography
+
+- Tools: VS Code for development, Chrome DevTools for debugging
 
 ### Implementation
 For Software:
 # Installation
-[commands]
+
+git clone https://github.com/Tino-sabu/Death-Clock.git
+cd Death-Clock
 
 # Run
-[commands]
+##### Using Python 3.x
+python -m http.server 8000
+
+Then open http://localhost:8000 in your browser
+
 
 ### Project Documentation
 For Software:
@@ -57,15 +61,6 @@ For Software:
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
 *Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
 
 # Build Photos
 ![Components](Add photo of your components here)
