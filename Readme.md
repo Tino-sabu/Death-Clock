@@ -49,28 +49,25 @@ Then open http://localhost:8000 in your browser
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
+<img width="1895" height="963" alt="image" src="https://github.com/user-attachments/assets/81b58fef-b182-4fd5-ae4b-d949ff8de014" />
+
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+<img width="1900" height="978" alt="image" src="https://github.com/user-attachments/assets/c13c5c2e-6571-4555-b612-c3fd17e476bb" />
+
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+<img width="1897" height="967" alt="image" src="https://github.com/user-attachments/assets/aefb168b-fe23-48d1-a739-b643de5e583b" />
+
 *Add caption explaining what this shows*
+
+<img width="1893" height="956" alt="image" src="https://github.com/user-attachments/assets/063a833f-66dc-4c15-bac1-eeea204337e2" />
+
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
 *Add caption explaining your workflow*
 
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
 
 ### Project Demo
 # Video
