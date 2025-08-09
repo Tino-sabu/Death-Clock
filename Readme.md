@@ -34,8 +34,6 @@ By asking silly and serious questions about your habits, this app gives you a li
 
 - Tools: VS Code for development, Chrome DevTools for debugging
 
-### Implementation
-For Software:
 # Installation
 
 ```
