@@ -12,7 +12,7 @@ A fun and interactive web app that estimates your remaining life expectancy base
 
 ### Team Members
 - Team Lead: Tino Sabu - SCMS School Of Engineering and Technology
-- Member 2: Pranav Jayan - SCMS School Of Engineering and Technology
+- Member 1: Pranav Jayan - SCMS School Of Engineering and Technology
 
 ### Project Description
 A quirky web app that calculates how many years, days, and seconds you have left to live — based on your age and lifestyle answers. It turns life expectancy into a personalized countdown clock for some deep (or dark) reflection.
