@@ -80,6 +80,7 @@ https://github.com/user-attachments/assets/90cee56f-f8ac-4549-b001-4993c1b6591f
 
 
 # Diagrams
+
 ```mermaid
 flowchart TD
     A[User visits site] --> B[Landing Page]
@@ -90,6 +91,7 @@ flowchart TD
     F --> G[User answers all questions]
     G --> H[Calculate life expectancy]
     H --> I[Display Life Counter & Results]
+
 
    
 
