@@ -1,10 +1,13 @@
 <img width="3188" height="1202" alt="frame (3)" src="https://github.com/user-attachments/assets/517ad8e9-ad22-457d-9538-a9e62d137cd7" />
 
 
-# Death Clock 🎯
+# Death Clock 
+
+Live Link: https://death-clock-five.vercel.app/
+
+A fun and interactive web app that estimates your remaining life expectancy based on personal info and lifestyle questions.
 
 
-## Basic Details
 ### Team Name: Localghost
 
 ### Team Members
