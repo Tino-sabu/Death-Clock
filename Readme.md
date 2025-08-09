@@ -93,10 +93,8 @@ flowchart TD
     H --> I[Display Life Counter & Results]
 
 
+```
    
-
-
-
 ## Team Contributions
 - Tino Sabu: Backend + Frontend
 - Pranav Jayan: Backend + Frontend
