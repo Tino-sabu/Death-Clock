@@ -8,8 +8,8 @@
 ### Team Name: Localghost
 
 ### Team Members
-- Team Lead: Tino Sabu - SSET
-- Member 2: Pranav Jayan - SSET
+- Team Lead: Tino Sabu - SCMS School Of Engineering and Technology
+- Member 2: Pranav Jayan - SCMS School Of Engineering and Technology
 
 ### Project Description
 A quirky web app that calculates how many years, days, and seconds you have left to live — based on your age and lifestyle answers. It turns life expectancy into a personalized countdown clock for some deep (or dark) reflection.
@@ -50,25 +50,24 @@ Then open http://localhost:8000 in your browser
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
+# Screenshots 
 <img width="1895" height="963" alt="image" src="https://github.com/user-attachments/assets/81b58fef-b182-4fd5-ae4b-d949ff8de014" />
 
-*Add caption explaining what this shows*
+*Landing page - Click 'Start your journey' to continue*
 
 <img width="1900" height="978" alt="image" src="https://github.com/user-attachments/assets/c13c5c2e-6571-4555-b612-c3fd17e476bb" />
 
-*Add caption explaining what this shows*
+*Prompts for the user to enter his details*
 
 <img width="1897" height="967" alt="image" src="https://github.com/user-attachments/assets/aefb168b-fe23-48d1-a739-b643de5e583b" />
 
-*Add caption explaining what this shows*
+*Prompts the user with 11 different questions related to hoomans life*
 
 <img width="1893" height="956" alt="image" src="https://github.com/user-attachments/assets/063a833f-66dc-4c15-bac1-eeea204337e2" />
 
+*Calculates estimated amount of years you have remaining to live*
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+
 
 
 ### Project Demo
@@ -77,13 +76,26 @@ For Software:
 
 https://github.com/user-attachments/assets/90cee56f-f8ac-4549-b001-4993c1b6591f
 
-*Explain what the video demonstrates*
+*Firstly users enters his/her details, subsequently completes 11 different questions and then it displays estimated amount of years you have remaining to live*
+
+
+# Diagrams
+flowchart TD
+    A[User visits site] --> B[Landing Page]
+    B --> C["Start Your Journey" button clicked]
+    C --> D[Personal Information Form]
+    D --> E[User submits details]
+    E --> F[11 Life Questions]
+    F --> G[User answers all questions]
+    G --> H[Calculate life expectancy]
+    H --> I[Display Life Counter & Results]
+   
+
 
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- Tino Sabu: Backend + Frontend
+- Pranav Jayan: Backend + Frontend
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
