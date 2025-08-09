@@ -74,9 +74,6 @@ For Software:
 
 
 ### Project Demo
-# Video
-
-
 https://github.com/user-attachments/assets/90cee56f-f8ac-4549-b001-4993c1b6591f
 
 *Firstly users enters his/her details, subsequently completes 11 different questions and then it displays estimated amount of years you have remaining to live*
