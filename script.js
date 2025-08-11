@@ -96,13 +96,8 @@ function handlePersonalFormSubmit(e) {
     
     console.log('User data:', currentUser); // Debug log
     
-    if (!currentUser.name || !currentUser.age || !currentUser.gender) {
+    if (!currentUser.name || isNaN(currentUser.age) || !currentUser.gender) {
         alert('Please fill in all required fields.');
-        return;
-    }
-    
-    if (currentUser.age < 1 || currentUser.age > 120) {
-        alert('Please enter a valid age between 1 and 120.');
         return;
     }
     
@@ -236,54 +231,36 @@ function previousQuestion() {
 // Results Calculation
 
 function calculateResults() {
-    // Calculate raw bonus years from answers
-    let rawBonusYears = 0;
+    // Calculate bonus years from answers with age-based adjustment
+    let rawYears = 0;
     currentUser.answers.forEach(answer => {
-        rawBonusYears += answer.weight; // 0, 1, 2, or 3 years each
+        rawYears += answer.weight;
     });
-    
+
     const currentAge = currentUser.age;
-    const maxLifespan = 80;
-    
-    // Age-weighted multiplier (younger = higher multiplier)
-    // Ages 20-30: 1.5x multiplier
-    // Ages 31-45: 1.2x multiplier  
-    // Ages 46-60: 1.0x multiplier
-    // Ages 60+: 0.7x multiplier
-    let ageMultiplier;
-    if (currentAge <= 10) {
-        ageMultiplier = 2;
-    } else if (currentAge <= 24) {
-        ageMultiplier = 1.55;
-    } 
-    else if (currentAge <= 40) {
-        ageMultiplier = 1.1;
-    }else if (currentAge <= 60) {
-        ageMultiplier = 0.7;
-    } else {
-        ageMultiplier = 0.5;
-    }
-    
-    // Apply age weighting to bonus years
-    const weightedBonusYears = Math.floor(rawBonusYears * ageMultiplier);
-    
-    // Calculate base lifespan (could be age-dependent too)
-    const baseLifespan = 65;
-    let projectedLifespan = baseLifespan + weightedBonusYears;
-    
-    // Cap at 80 years maximum
-    projectedLifespan = Math.min(projectedLifespan, maxLifespan);
-    
-    // Calculate remaining years
+    let bonusYears = rawYears;
+    if (currentAge < 20) {
+        bonusYears = rawYears + 10;
+    } else if (currentAge >= 20 && currentAge <= 40) {
+        bonusYears = rawYears ;
+    } else if (currentAge > 40 && currentAge <= 60) {
+        bonusYears = rawYears-10 ;
+    }else if (currentAge > 60) {
+        bonusYears = rawYears - 15;
+    } // else (41-60): use exact years
+
+
+    // Ensure bonusYears is not negative
+    bonusYears = Math.max(0, bonusYears);
+
+    let projectedLifespan = currentAge + bonusYears;
     const remainingYears = Math.max(projectedLifespan - currentAge, 1);
-    
-    // Calculate life wasted percentage
     const lifeWastedPercentage = (currentAge / projectedLifespan) * 100;
-    
+
     currentUser.lifeScore = remainingYears;
     currentUser.projectedLifespan = projectedLifespan;
     currentUser.lifeWastedPercentage = lifeWastedPercentage;
-    
+
     // Show results screen and display the results
     showScreen('results');
     displayResults(remainingYears);
